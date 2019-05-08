@@ -25,8 +25,8 @@ GLfloat frame_textures[] = {
 };
 
 XFrame::XFrame(char* imagePath) {
-    mProgram = genProgramFromFile("/Users/lixianfeng/Desktop/gles/triangle_ver_shader", "/Users/lixianfeng/Desktop/gles/triangle_frg_shader");
-    textureId = genTexture(imagePath);
+    mProgram = genProgramFromFile("/Users/a11/test/opengl/triangle_ver_shader", "/Users/a11/test/opengl/triangle_frg_shader");
+    textureId = genTexture(imagePath, PNG);
 }
 
 int XFrame::draw() {

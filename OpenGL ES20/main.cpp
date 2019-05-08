@@ -65,11 +65,17 @@ void drawSprite() {
     if (!sprite) {
         vector<char*> imgPaths;
         
-        imgPaths.push_back("/Users/lixianfeng/Desktop/gles/img11.jpeg");
-        imgPaths.push_back("/Users/lixianfeng/Desktop/gles/img12.jpg");
-        imgPaths.push_back("/Users/lixianfeng/Desktop/gles/img13.jpg");
-        imgPaths.push_back("/Users/lixianfeng/Desktop/gles/img14.jpg");
-        imgPaths.push_back("/Users/lixianfeng/Desktop/gles/img15.jpg");
+//        imgPaths.push_back("/Users/lixianfeng/Desktop/gles/img11.jpeg");
+//        imgPaths.push_back("/Users/lixianfeng/Desktop/gles/img12.jpg");
+//        imgPaths.push_back("/Users/lixianfeng/Desktop/gles/img13.jpg");
+//        imgPaths.push_back("/Users/lixianfeng/Desktop/gles/img14.jpg");
+//        imgPaths.push_back("/Users/lixianfeng/Desktop/gles/img15.jpg");
+        
+        imgPaths.push_back("/Users/a11/test/opengl/img1.png");
+        imgPaths.push_back("/Users/a11/test/opengl/img2.png");
+        imgPaths.push_back("/Users/a11/test/opengl/img3.png");
+        imgPaths.push_back("/Users/a11/test/opengl/img4.png");
+        imgPaths.push_back("/Users/a11/test/opengl/img5.png");
         
         sprite = new Sprite(imgPaths);
     }

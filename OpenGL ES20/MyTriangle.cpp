@@ -30,7 +30,7 @@ void MyTriangle::initProgram() {
 }
 
 void MyTriangle::initData() {
-    textureId = genTexture("/Users/lixianfeng/Desktop/gles/img.jpg");
+    textureId = genTexture("/Users/lixianfeng/Desktop/gles/img.jpg", JPG);
 }
 
 int MyTriangle::draw() {

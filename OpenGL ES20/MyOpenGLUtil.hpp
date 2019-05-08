@@ -15,11 +15,13 @@
 #include <string>
 #include "ImageUtils.hpp"
 
+enum ImageType {PNG = 1, JPG = 2, JPEG = 3};
+
 extern GLint getShader(GLenum type, const GLchar*);
 //extern GLint genProgram();
 extern GLint genProgram(const GLchar* v_shader_source, const GLchar* f_shader_source);
 
 extern GLint genProgramFromFile(const GLchar* v_shader_path, const GLchar* f_shader_path);
 //生成纹理
-extern GLuint genTexture(const char* );
+extern GLuint genTexture(const char* , ImageType imgType);
 #endif /* MyOpenGLUtil_hpp */

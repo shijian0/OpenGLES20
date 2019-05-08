@@ -95,7 +95,7 @@ extern GLint genProgramFromFile(const GLchar* v_shader_path, const GLchar* f_sha
     return genProgram(vShaderCode, fShaderCode);
 }
 
-extern GLuint genTexture(const char* imagePath) {
+extern GLuint genTexture(const char* imagePath, ImageType imgType) {
     GLuint textureId = 0;
     FIBITMAP* img = loadImage(imagePath);
     if (img == NULL) {
@@ -111,7 +111,17 @@ extern GLuint genTexture(const char* imagePath) {
     // Set texture filtering
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, imgData);
+
+    if (imgType == JPG) {
+        //glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, imgData);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_BGR, GL_UNSIGNED_BYTE, imgData);
+    }
+    else if (imgType == PNG) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_BGRA, GL_UNSIGNED_BYTE, imgData);
+    }
+    else {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGB, GL_UNSIGNED_BYTE, imgData);
+    }
     glGenerateMipmap(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, 0);
     freeImage(img);
